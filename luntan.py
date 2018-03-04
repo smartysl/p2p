@@ -56,13 +56,13 @@ class Click(object):
                form=re.findall(r'formhash=(.+?)\"',titlehtml)
                timing=re.findall(r'id="posttime" value="(.+?)\"',titlehtml)
                aimurl='http://bbs.uestc.edu.cn/forum.php?mod=post&action=reply&fid=61&tid='+i+'&extra=page%3D1&replysubmit=yes&infloat=yes&handlekey=fastpost&inajax=1'
-               autoresponsedata={'message':'我蒋某人祝大家新年快乐','posttime':timing[0],'formhash':form[0],'usesig':'1','subject':''}
+               autoresponsedata={'message':'','posttime':timing[0],'formhash':form[0],'usesig':'1','subject':''}
                print(autoresponsedata)
                response=self.session.post(aimurl,data=autoresponsedata,headers=self.headers,verify=False)
                time.sleep(0.1)
 if __name__=='__main__':
-    username="诡异的守护者"
-    password="YZNyzn194612"
+    username=""
+    password=""
     c=Click()
     c.scarpy(username,password)
 
